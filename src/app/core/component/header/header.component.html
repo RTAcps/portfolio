@@ -9,12 +9,24 @@
       >
     </a>
 
+    @if (!isMobileView) {
     <ul class="flex space-x-24 font-bold">
       <li><a href="/home" class="text-base text-3xl	hover:underline">Home</a></li>
       <li><a href="/sobre" class="text-base text-3xl hover:underline">Sobre</a></li>
       <li><a href="/projetos" class="text-base text-3xl hover:underline">Projetos</a></li>
       <li><a href="/contato" class="text-base text-3xl hover:underline">Contato</a></li>
     </ul>
+  } @else {
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu>
+      <a mat-menu-item href="/home" class="text-base text-3xl	hover:underline">Home</a>
+      <a mat-menu-item href="/sobre" class="text-base text-3xl hover:underline">Sobre</a>
+      <a mat-menu-item href="/projetos" class="text-base text-3xl hover:underline">Projetos</a>
+      <a mat-menu-item href="/contato" class="text-base text-3xl hover:underline">Contato</a>
+    </mat-menu>
+  }
   </nav>
 </main>
 
