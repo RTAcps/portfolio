@@ -17,7 +17,6 @@ $right: flex-end
   background-color: $midnight-color
 
   width: 100vw
-  min-height: 100vh
 
   display: flex
   flex-direction: row
@@ -28,6 +27,10 @@ $right: flex-end
   padding: 0
   box-sizing: inherit
   position: relative
+
+  .left-side
+    display: flex
+    justify-content: $left
 
   .content
     flex: 1
