@@ -3,5 +3,8 @@ export interface Projects {
   image: string,
   repositorio: string,
   link: string,
-  descricao: string
+  descricao: string,
+  width: number,
+  height: number,
+  max: number
 }
