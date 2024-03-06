@@ -3,11 +3,19 @@ import { HeaderComponent } from '../../core/component/header/header.component';
 import { FooterComponent } from '../../core/component/footer/footer.component';
 import { Projects } from '../../../shared/models/projects';
 import { NgOptimizedImage, SlicePipe } from '@angular/common';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, NgOptimizedImage, SlicePipe],
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    NgOptimizedImage,
+    SlicePipe,
+    ReactiveFormsModule
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass'
 })
@@ -45,7 +53,33 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  public contactForm = this.fb.group({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  constructor( private fb: FormBuilder ) {}
+
   ngOnInit() {
     //
+  }
+
+  public onSubmit(): void {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Mensagem enviada com sucesso!"
+    });
   }
 }

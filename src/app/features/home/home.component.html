@@ -37,11 +37,36 @@
 
   <section class="my-10">
     <h2 class="text-2xl font-bold text-center">Contato</h2>
-    <form class="flex flex-col gap-4">
-      <input type="text" placeholder="Nome" class="bg-gray-200 p-4 rounded-lg">
-      <input type="email" placeholder="Email" class="bg-gray-200 p-4 rounded-lg">
-      <textarea placeholder="Mensagem" class="bg-gray-200 p-4 rounded-lg"></textarea>
-      <button type="submit" class="bg-blue-500 text-white p-4 rounded-lg">Enviar</button>
+    <form
+      class="flex flex-col gap-4"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <input
+        type="text"
+        placeholder="Nome"
+        class="bg-gray-200 p-4 rounded-lg"
+        formControlName="name"
+        required
+      >
+      <input
+        type="email"
+        placeholder="Email"
+        class="bg-gray-200 p-4 rounded-lg"
+        formControlName="email"
+        required
+      >
+      <textarea
+        placeholder="Mensagem"
+        class="bg-gray-200 p-4 rounded-lg"
+        formControlName="message"
+      ></textarea>
+      <button
+      type="submit"
+      class="bg-blue-500 text-black p-4 rounded-lg"
+      >
+        Enviar
+      </button>
     </form>
   </section>
 </main>
