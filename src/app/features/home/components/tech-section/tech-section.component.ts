@@ -12,11 +12,11 @@ import {
   CheckCircle,
   PlayCircle,
   Figma,
+  LucideIconData,
 } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { mockData } from '../../../../shared/data/mock';
 import { Technology } from '../../../../../shared/models/projects';
-import { LucideIconData } from 'lucide-angular/icons/types';
 
 @Component({
   selector: 'app-tech-section',

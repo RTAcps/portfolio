@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LucideAngularModule, Mail, Phone, Send, Github, Linkedin, Instagram, Link } from 'lucide-angular';
+import { LucideAngularModule, Mail, Phone, Send, Github, Linkedin, Instagram, Link, LucideIconData } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { DataService } from '../../../../shared/services/data.service';
 import { ContactData } from '../../../../../shared/models/projects';
-import { LucideIconData } from 'lucide-angular/icons/types';
 
 @Component({
   selector: 'app-contact-section',
