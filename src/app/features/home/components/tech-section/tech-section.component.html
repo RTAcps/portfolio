@@ -20,14 +20,30 @@
           {{ 'tech.title' | translate }}
         </span>
       </h2>
-      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-8">
         {{ 'tech.subtitle' | translate }}
       </p>
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+        @for (category of getCategories(); track category) {
+          <button
+            (click)="selectCategory(category)"
+            [ngClass]="{
+              'bg-gradient-to-r from-[#f7003e] to-[#d914a4] text-white shadow-lg scale-105': selectedCategory === category,
+              'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:scale-105': selectedCategory !== category
+            }"
+            class="px-4 py-2 rounded-full font-medium transition-all duration-300 text-sm"
+          >
+            {{ category }}
+          </button>
+        }
+      </div>
     </div>
 
     <!-- Tech Grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-      @for (tech of technologies; track tech.name; let i = $index) {
+      @for (tech of getFilteredTechnologies(); track tech.name; let i = $index) {
         <div
           class="p-6 text-center hover:shadow-2xl transition-all duration-300 cursor-pointer group backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 rounded-xl"
           [ngClass]="{
