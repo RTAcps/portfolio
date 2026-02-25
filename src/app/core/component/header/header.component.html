@@ -1,32 +1,142 @@
-<main class="bg-transparent text-midnight-color">
-  <nav class="container flex justify-between items-center mx-auto py-4">
-    <a href="/" class="text-xl font-bold">
-      <img
-        ngSrc="./assets/images/logo.png"
-        alt="Logo da página contendo o nome Rodrigo e seu cargo Angular Front-end"
-        width="250"
-        height="250"
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [ngClass]="{
+    'bg-white/80 dark:bg-gray-950/80 backdrop-blur-lg shadow-lg': scrolled,
+    'bg-transparent': !scrolled
+  }"
+>
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a
+        href="#about"
+        (click)="scrollToSection($event, '#about')"
+        class="text-2xl font-bold bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent hover:scale-105 transition-transform"
       >
-    </a>
+        &lt;RTA /&gt;
+      </a>
 
-    @if (!isMobileView) {
-    <ul class="flex space-x-24 font-bold">
-      <li><a href="/home" class="text-base text-3xl	hover:underline">Home</a></li>
-      <li><a href="/sobre" class="text-base text-3xl hover:underline">Sobre</a></li>
-      <li><a href="/projetos" class="text-base text-3xl hover:underline">Projetos</a></li>
-      <li><a href="/contato" class="text-base text-3xl hover:underline">Contato</a></li>
-    </ul>
-  } @else {
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu>
-      <a mat-menu-item href="/home" class="text-base text-3xl	hover:underline">Home</a>
-      <a mat-menu-item href="/sobre" class="text-base text-3xl hover:underline">Sobre</a>
-      <a mat-menu-item href="/projetos" class="text-base text-3xl hover:underline">Projetos</a>
-      <a mat-menu-item href="/contato" class="text-base text-3xl hover:underline">Contato</a>
-    </mat-menu>
-  }
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        @for (link of navLinks; track link.href) {
+          <a
+            [href]="link.href"
+            (click)="scrollToSection($event, link.href)"
+            class="text-gray-700 dark:text-gray-300 hover:text-[#f7003e] dark:hover:text-[#f7003e] transition-colors font-medium relative group"
+          >
+            {{ link.label | translate }}
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f7003e] transition-all group-hover:w-full"
+            ></span>
+          </a>
+        }
+
+        <!-- Language Selector -->
+        <div class="relative">
+          <button
+            (click)="toggleLanguageMenu()"
+            class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
+          >
+            <span class="text-md text-[#f7003e] font-black">{{ currentLanguage?.flag }}</span>
+            <lucide-icon [img]="ChevronDown" class="h-4 w-4 text-gray-700 dark:text-gray-300"></lucide-icon>
+          </button>
+
+          @if (languageMenuOpen) {
+            <div class="absolute right-0 mt-2 w-48 rounded-lg bg-white dark:bg-gray-900 shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50">
+              @for (lang of languageService.languages; track lang.code) {
+                <button
+                  (click)="changeLanguage(lang.code)"
+                  class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  [ngClass]="{
+                    'bg-[#f7003e]/10 dark:bg-[#f7003e]/50': currentLanguage?.code === lang.code
+                  }"
+                >
+                  <span class="text-sm">{{ lang.flag }}</span>
+                  <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{ lang.name }}</span>
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <button
+          (click)="toggleTheme()"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
+        >
+          @if (themeService.theme() === 'dark') {
+            <lucide-icon [img]="Sun" class="h-5 w-5 text-[#ffc222]"></lucide-icon>
+          } @else {
+            <lucide-icon [img]="Moon" class="h-5 w-5 text-[#545859]"></lucide-icon>
+          }
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center gap-2">
+        <!-- Language Selector Mobile -->
+        <div class="relative">
+          <button
+            (click)="toggleLanguageMenu()"
+            class="flex items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
+          >
+            <span class="text-md text-[#f7003e] font-black">{{ currentLanguage?.flag }}</span>
+          </button>
+
+          @if (languageMenuOpen) {
+            <div class="absolute right-0 mt-2 w-40 rounded-lg bg-white dark:bg-gray-900 shadow-xl border border-gray-200 dark:border-gray-700 py-2 z-50">
+              @for (lang of languageService.languages; track lang.code) {
+                <button
+                  (click)="changeLanguage(lang.code)"
+                  class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  [ngClass]="{
+                    'bg-[#f7003e]/10 dark:bg-[#f7003e]/50': currentLanguage?.code === lang.code
+                  }"
+                >
+                  <span class="text-sm">{{ lang.flag }}</span>
+                  <span class="text-xs font-small text-gray-700 dark:text-gray-300">{{ lang.name }}</span>
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <button
+          (click)="toggleTheme()"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
+        >
+          @if (themeService.theme() === 'dark') {
+            <lucide-icon [img]="Sun" class="h-5 w-5 text-[#ffc222]"></lucide-icon>
+          } @else {
+            <lucide-icon [img]="Moon" class="h-5 w-5 text-[#545859]"></lucide-icon>
+          }
+        </button>
+        <button
+          (click)="mobileMenuOpen = !mobileMenuOpen"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          @if (mobileMenuOpen) {
+            <lucide-icon [img]="X" class="h-6 w-6 text-gray-700 dark:text-gray-300"></lucide-icon>
+          } @else {
+            <lucide-icon [img]="Menu" class="h-6 w-6 text-gray-700 dark:text-gray-300"></lucide-icon>
+          }
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (mobileMenuOpen) {
+      <div class="md:hidden mt-4 pb-4 space-y-4">
+        @for (link of navLinks; track link.href) {
+          <a
+            [href]="link.href"
+            (click)="scrollToSection($event, link.href)"
+            class="block text-gray-700 dark:text-gray-300 hover:text-[#f7003e] transition-colors font-medium py-2"
+          >
+            {{ link.label | translate }}
+          </a>
+        }
+      </div>
+    }
   </nav>
-</main>
+</header>
 
