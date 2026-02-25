@@ -1,50 +1,11 @@
-<app-header></app-header>
-
-<main class="container mx-auto">
-  <section class="introduction my-2">
-    <h4 class="text-4xl font-bold text-center">
-      <q>Se eu vi mais longe, foi porque estava sobre os ombros de gigantes</q>. Sir Isaac Newton
-    </h4>
-  </section>
-
-  <section class="my-10">
-    <h2 class="text-2xl font-bold text-center">Sobre Mim</h2>
-    <p class="text-lg text-gray-700 mt-4 text-center">Sou um profissional dedicado e apaixonado por tecnologia, buscando
-      novos desafios em empresas que valorizam a inovação e o trabalho em equipe.</p>
-  </section>
-
-  <section class="my-10">
-    <h2 class="text-2xl font-bold text-center">Portfólio</h2>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      @for (project of projects; track project) {
-      <li class="bg-white shadow-md rounded-lg p-4">
-        <img [ngSrc]="project.image" [alt]="project.title" class="rounded-lg mb-2" [width]="project.width"
-          [height]="project.height" priority>
-        <h3 class="text-lg font-bold">{{ project.title }}</h3>
-        <p class="text-gray-700">{{ project.descricao }}</p>
-        <a [href]="project.link" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">{{
-          project.title |
-          slice:0:project.max }} (site)</a>
-        <br>
-        <a [href]="project.repositorio" class="text-blue-500 hover:underline" target="_blank"
-          rel="noopener noreferrer">{{ project.title }}
-          - Repositório Github</a>
-      </li>
-      }
-    </ul>
-  </section>
-
-  <section class="my-10">
-    <h2 class="text-2xl font-bold text-center">Contato</h2>
-    <form class="flex flex-col gap-4" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-      <input type="text" placeholder="Nome" class="bg-gray-200 p-4 rounded-lg" formControlName="name" required>
-      <input type="email" placeholder="Email" class="bg-gray-200 p-4 rounded-lg" formControlName="email" required>
-      <textarea placeholder="Mensagem" class="bg-gray-200 p-4 rounded-lg" formControlName="message"></textarea>
-      <button type="submit" class="bg-blue-500 text-black p-4 rounded-lg">
-        Enviar
-      </button>
-    </form>
-  </section>
-</main>
-
-<app-footer></app-footer>
+<div class="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
+  <app-header></app-header>
+  <main>
+    <app-hero-section></app-hero-section>
+    <app-experience-section></app-experience-section>
+    <app-tech-section></app-tech-section>
+    <app-projects-section></app-projects-section>
+    <app-contact-section></app-contact-section>
+  </main>
+  <app-footer></app-footer>
+</div>
