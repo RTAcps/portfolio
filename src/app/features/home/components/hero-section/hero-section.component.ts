@@ -1,8 +1,8 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ArrowDown, MapPin, Briefcase } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
-import { mockData } from '../../../../shared/data/mock';
+import { DataService } from '../../../../shared/services/data.service';
 import { HeroData } from '../../../../../shared/models/projects';
 
 @Component({
@@ -11,12 +11,29 @@ import { HeroData } from '../../../../../shared/models/projects';
   imports: [CommonModule, LucideAngularModule, TranslateModule],
   templateUrl: './hero-section.component.html',
 })
-export class HeroSectionComponent {
+export class HeroSectionComponent implements OnInit {
   readonly ArrowDown = ArrowDown;
   readonly MapPin = MapPin;
   readonly Briefcase = Briefcase;
 
-  hero: HeroData = mockData.hero;
+  hero: HeroData = {
+    name: '',
+    title: '',
+    subtitle: '',
+    description: '',
+    location: '',
+    availability: '',
+  };
+
+  constructor(private readonly dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.data$.subscribe((data) => {
+      if (data) {
+        this.hero = data.hero;
+      }
+    });
+  }
 
   @ViewChild('heroAvatar') heroAvatar!: ElementRef;
 
@@ -35,3 +52,5 @@ export class HeroSectionComponent {
     }
   }
 }
+
+

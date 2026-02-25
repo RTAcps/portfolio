@@ -1,0 +1,115 @@
+{
+  "data": {
+    "hero": {
+      "name": "Rodrigo Teixeira de Andrade",
+      "title": "Développeur Frontend et Spécialiste Fullstack",
+      "subtitle": "Spécialiste Angular avec 4+ ans d'expérience",
+      "description": "Développement d'applications web scalables et haute performance. Expertise en Angular, TypeScript, architecture microfrontend et pratiques agiles dans des environnements multidisciplinaires internationaux.",
+      "location": "São Paulo, Brésil"
+    },
+    "about": {
+      "bio": "Développeur Frontend avec 4+ ans d'expérience et près de 1 an en Fullstack, spécialisé dans les applications web scalables. Expertise avérée en Angular (v13–20), TypeScript, RxJS, Angular Material et conception réactive. Expérience pratique avec CI/CD (GitHub Actions, Azure DevOps), principes SOLID, tests automatisés et assurance qualité avec SonarQube. Contribuant actuellement à la plateforme mondiale de paris sportifs d'Entain, travaillant avec des équipes multidisciplinaires au Brésil, en Inde, au Canada et en Angleterre.",
+      "highlights": [
+        { "label": "Années d'Expérience", "value": "4+ ans" },
+        { "label": "Expertise", "value": "Frontend et Fullstack" },
+        { "label": "Couverture de Tests", "value": "65-80%" },
+        { "label": "Langues", "value": "PT, EN, ES" }
+      ]
+    },
+    "experiences": [
+      {
+        "company": "Entain",
+        "position": "Développeur Frontend – Projet Global de Paris Sportifs et Casino",
+        "period": "Jan 2026 - Présent",
+        "description": "Développement d'applications web haute performance en Angular pour la plateforme mondiale de paris et casino. Responsable des solutions frontend scalables pour les marchés mondiaux. Collaboration dans un environnement agile international avec discussions techniques quotidiennes et cérémonies de sprint en anglais."
+      },
+      {
+        "company": "F1rst Digital Services",
+        "position": "Développeur Full Stack – Projet Global Santander",
+        "period": "May 2025 - Jan 2026",
+        "description": "Développement et maintenance d'applications web haute performance dans un environnement bancaire mondial. Contributions aux solutions frontend et backend, suivant les principes API-first. Réduction de 25-40% du temps de chargement, réduction de 70% du temps de développement et résolution de 40+ tickets critiques."
+      },
+      {
+        "company": "Minsait",
+        "position": "Développeur Frontend – Projet Global Santander",
+        "period": "Oct 2024 - May 2025",
+        "description": "Maintenance d'applications web haute performance en Angular pour la plateforme bancaire mondiale de Santander. Leadership dans l'adoption des microfrontends dans plusieurs pays. Optimisation des performances réduisant les appels API redondants de 15 à 2-5."
+      },
+      {
+        "company": "Wiz Co",
+        "position": "Développeur Frontend – Intranet et Systèmes Internes",
+        "period": "Feb 2022 - Feb 2024",
+        "description": "Développement et support des plateformes internes et solutions intranet en Angular. Rénovation de l'intranet pour 1 500+ utilisateurs avec une augmentation d'adoption de 65%. Augmentation de la couverture des tests de 40% à 80% et réduction de 40% du temps de chargement."
+      }
+    ],
+    "projects": [
+      {
+        "title": "Plateforme de Commerce Électronique",
+        "description": "Plateforme e-commerce complète développée en Angular avec paiement optimisé et panneau d'administration."
+      },
+      {
+        "title": "Tableau de Bord Analytique",
+        "description": "Tableau de bord interactif avec visualisation de données en temps réel, graphiques dynamiques et rapports personnalisables."
+      },
+      {
+        "title": "Application de Gestion des Tâches",
+        "description": "Application de gestion des tâches avec glisser-déposer, notifications en temps réel et collaboration d'équipe."
+      },
+      {
+        "title": "Plateforme de Médias Sociaux",
+        "description": "Réseau social avec fil d'actualité dynamique, système de publications, commentaires et messagerie instantanée."
+      }
+    ]
+  },
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "tech": "Technologies",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "availability": "Disponible pour travailler",
+    "cta": "Me Contacter"
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Mon parcours dans le développement front-end"
+  },
+  "tech": {
+    "title": "Technologies et Compétences",
+    "subtitle": "Outils et technologies que je maîtrise"
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "subtitle": "Quelques-unes de mes meilleures réalisations",
+    "viewProject": "Voir le Projet",
+    "viewGithub": "GitHub"
+  },
+  "contact": {
+    "title": "Discutons",
+    "subtitle": "Vous avez un projet en tête ? Contactez-moi !",
+    "email": "Email",
+    "phone": "Téléphone",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre.email@exemple.com",
+      "message": "Message",
+      "messagePlaceholder": "Votre message...",
+      "submit": "Envoyer le Message"
+    },
+    "toast": {
+      "successTitle": "Message envoyé !",
+      "successDescription": "Je vous répondrai bientôt.",
+      "errorTitle": "Erreur",
+      "errorDescription": "Veuillez remplir tous les champs."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "madeWith": "Fait avec",
+    "by": "par"
+  }
+}

@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LucideAngularModule, Mail, Phone, Send, Github, Linkedin, Twitter, Link } from 'lucide-angular';
+import { LucideAngularModule, Mail, Phone, Send, Github, Linkedin, Instagram, Link } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
-import { mockData } from '../../../../shared/data/mock';
+import { DataService } from '../../../../shared/services/data.service';
 import { ContactData } from '../../../../../shared/models/projects';
 import { LucideIconData } from 'lucide-angular/icons/types';
 
@@ -13,12 +13,16 @@ import { LucideIconData } from 'lucide-angular/icons/types';
   imports: [CommonModule, FormsModule, LucideAngularModule, TranslateModule],
   templateUrl: './contact-section.component.html',
 })
-export class ContactSectionComponent {
+export class ContactSectionComponent implements OnInit {
   readonly Mail = Mail;
   readonly Phone = Phone;
   readonly Send = Send;
 
-  contact: ContactData = mockData.contact;
+  contact: ContactData = {
+    email: '',
+    phone: '',
+    social: [],
+  };
 
   formData = {
     name: '',
@@ -30,10 +34,20 @@ export class ContactSectionComponent {
   toastTitleKey = '';
   toastDescriptionKey = '';
 
+  constructor(private readonly dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.data$.subscribe((data) => {
+      if (data) {
+        this.contact = data.contact;
+      }
+    });
+  }
+
   private readonly iconMap: Record<string, LucideIconData> = {
     github: Github,
     linkedin: Linkedin,
-    twitter: Twitter,
+    instagram: Instagram,
   };
 
   getIcon(iconName: string): LucideIconData {
@@ -63,3 +77,4 @@ export class ContactSectionComponent {
     }, 4000);
   }
 }
+

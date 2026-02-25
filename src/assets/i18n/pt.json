@@ -1,0 +1,115 @@
+{
+  "data": {
+    "hero": {
+      "name": "Rodrigo Teixeira de Andrade",
+      "title": "Frontend Developer & Fullstack Specialist",
+      "subtitle": "Especialista em Angular com 4+ anos de experiência",
+      "description": "Desenvolvendo aplicações web escaláveis e de alto desempenho. Expertise em Angular, TypeScript, arquitetura de microfrontends e práticas ágeis em ambientes multidisciplinares internacionais.",
+      "location": "São Paulo, Brasil"
+    },
+    "about": {
+      "bio": "Desenvolvedor Frontend com 4+ anos de experiência e quase 1 ano em Fullstack, especializado em aplicações web escaláveis. Expertise comprovada em Angular (v13–20), TypeScript, RxJS, Angular Material e design responsivo. Experiência prática com CI/CD (GitHub Actions, Azure DevOps), princípios SOLID, testes automatizados e garantia de qualidade com SonarQube. Contribuindo atualmente para a plataforma global de apostas da Entain, trabalhando com equipes multidisciplinares em Brasil, Índia, Canadá e Inglaterra.",
+      "highlights": [
+        { "label": "Anos de Experiência", "value": "4+ anos" },
+        { "label": "Expertise", "value": "Frontend & Fullstack" },
+        { "label": "Cobertura de Testes", "value": "65-80%" },
+        { "label": "Idiomas", "value": "PT, EN, ES" }
+      ]
+    },
+    "experiences": [
+      {
+        "company": "Entain",
+        "position": "Frontend Developer – Global Sporting Bet and Casino Project",
+        "period": "Jan 2026 - Presente",
+        "description": "Desenvolvendo aplicações web de alto desempenho em Angular para a plataforma global de apostas e cassino. Responsável por soluções frontend escaláveis para mercados globais. Colaboração em ambiente ágil internacional com discussões técnicas diárias e cerimônias de sprint em inglês."
+      },
+      {
+        "company": "F1rst Digital Services",
+        "position": "Full Stack Developer – Global Santander Project",
+        "period": "May 2025 - Jan 2026",
+        "description": "Desenvolvendo e mantendo aplicações web de alta performance em ambiente bancário global. Contribuições em soluções frontend e backend, seguindo princípios API-first. Redução de 25-40% no tempo de carregamento, 70% de redução no tempo de desenvolvimento e resolução de 40+ tickets críticos."
+      },
+      {
+        "company": "Minsait",
+        "position": "Frontend Developer – Global Santander Project",
+        "period": "Oct 2024 - May 2025",
+        "description": "Mantendo aplicações web de alto desempenho em Angular para a plataforma bancária global do Santander. Liderança na adoção de microfrontends em múltiplos países. Otimização de performance reduzindo chamadas API redundantes de 15 para 2-5."
+      },
+      {
+        "company": "Wiz Co",
+        "position": "Frontend Developer – Intranet & Internal Systems",
+        "period": "Feb 2022 - Feb 2024",
+        "description": "Desenvolvimento e suporte de plataformas internas e soluções de intranet em Angular. Renovação da intranet para 1.500+ usuários com aumento de 65% na adoção. Aumento de cobertura de testes de 40% para 80% e redução de 40% no tempo de carregamento."
+      }
+    ],
+    "projects": [
+      {
+        "title": "E-Commerce Platform",
+        "description": "Plataforma completa de e-commerce desenvolvida em Angular com checkout otimizado e painel administrativo."
+      },
+      {
+        "title": "Dashboard Analytics",
+        "description": "Dashboard interativo com visualização de dados em tempo real, gráficos dinâmicos e relatórios customizáveis."
+      },
+      {
+        "title": "Task Management App",
+        "description": "Aplicação de gerenciamento de tarefas com drag-and-drop, notificações em tempo real e colaboração em equipe."
+      },
+      {
+        "title": "Social Media Platform",
+        "description": "Rede social com feed dinâmico, sistema de posts, comentários e mensagens instantâneas."
+      }
+    ]
+  },
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiências",
+    "tech": "Tecnologias",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "availability": "Disponível para trabalho",
+    "cta": "Entre em Contato"
+  },
+  "experience": {
+    "title": "Experiências Profissionais",
+    "subtitle": "Minha jornada no desenvolvimento front-end"
+  },
+  "tech": {
+    "title": "Tecnologias & Habilidades",
+    "subtitle": "Ferramentas e tecnologias que domino"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Alguns dos meus melhores trabalhos",
+    "viewProject": "Ver Projeto",
+    "viewGithub": "GitHub"
+  },
+  "contact": {
+    "title": "Vamos Conversar",
+    "subtitle": "Tem um projeto em mente? Entre em contato!",
+    "email": "Email",
+    "phone": "Telefone",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "Email",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Sua mensagem...",
+      "submit": "Enviar Mensagem"
+    },
+    "toast": {
+      "successTitle": "Mensagem enviada!",
+      "successDescription": "Entrarei em contato em breve.",
+      "errorTitle": "Erro",
+      "errorDescription": "Por favor, preencha todos os campos."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "madeWith": "Feito com",
+    "by": "por"
+  }
+}
