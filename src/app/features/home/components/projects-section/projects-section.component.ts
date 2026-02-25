@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ExternalLink } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { mockData } from '../../../../shared/data/mock';
-import { Project } from '../../../../shared/models/projects';
+import { Project } from '../../../../../shared/models/projects';
 
 @Component({
   selector: 'app-projects-section',

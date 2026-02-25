@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ArrowDown, MapPin, Briefcase } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { mockData } from '../../../../shared/data/mock';
-import { HeroData } from '../../../../shared/models/projects';
+import { HeroData } from '../../../../../shared/models/projects';
 
 @Component({
   selector: 'app-hero-section',

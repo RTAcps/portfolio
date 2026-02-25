@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LucideAngularModule, Mail, Phone, Send, Github, Linkedin, Twitter, Link } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { mockData } from '../../../../shared/data/mock';
-import { ContactData } from '../../../../shared/models/projects';
+import { ContactData } from '../../../../../shared/models/projects';
 import { LucideIconData } from 'lucide-angular/icons/types';
 
 @Component({

@@ -15,7 +15,7 @@ import {
 } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { mockData } from '../../../../shared/data/mock';
-import { Technology } from '../../../../shared/models/projects';
+import { Technology } from '../../../../../shared/models/projects';
 import { LucideIconData } from 'lucide-angular/icons/types';
 
 @Component({
