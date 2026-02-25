@@ -5,7 +5,7 @@
       "title": "Frontend Developer & Fullstack Specialist",
       "subtitle": "Angular Specialist with 4+ years of experience",
       "description": "Developing scalable, high-performance web applications. Expertise in Angular, TypeScript, microfrontend architecture, and agile practices in multidisciplinary international environments.",
-      "location": "São Paulo, Brazil"
+      "location": "Campinas, São Paulo, Brazil"
     },
     "about": {
       "bio": "Frontend Developer with 4+ years of experience and nearly 1 year in Fullstack, specialized in scalable web applications. Proven expertise in Angular (v13–20), TypeScript, RxJS, Angular Material, and responsive design. Hands-on experience with CI/CD (GitHub Actions, Azure DevOps), SOLID principles, automated testing, and quality assurance with SonarQube. Currently contributing to Entain's global sports betting platform, working with multidisciplinary teams across Brazil, India, Canada, and England.",
@@ -63,7 +63,7 @@
   },
   "nav": {
     "about": "About",
-    "experience": "Experience",
+    "experience": "Experiences",
     "tech": "Technologies",
     "projects": "Projects",
     "contact": "Contact"
