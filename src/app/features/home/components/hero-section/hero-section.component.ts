@@ -46,7 +46,7 @@ export class HeroSectionComponent implements OnInit {
   }
 
   scrollToContact(): void {
-    const element = document.querySelector('#contato');
+    const element = document.querySelector('#contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
