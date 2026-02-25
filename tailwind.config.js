@@ -3,20 +3,25 @@ module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'primary-color': '#373764',
-        'dark-color': '#0C2D48',
-        'midnight-color': '#145DA0',
-        'blue': '#2E8BC0',
-        'light-color': '#B1D4E0'
+        gray: {
+          950: '#0a0a0f',
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },
   plugins: [],
-  config: {
-    standalone: true,
-  }
 }
 
