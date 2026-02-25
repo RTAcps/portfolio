@@ -1,0 +1,178 @@
+<section
+  id="contato"
+  class="py-20 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden"
+>
+  <!-- Background Decoration -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div
+      class="absolute top-20 right-20 w-96 h-96 bg-[#f7003e]/10 dark:bg-[#d914a4]/10 rounded-full blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 bg-[#d914a4]/10 dark:bg-[#ae20fa]/10 rounded-full blur-3xl"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <span
+          class="bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
+        >
+          {{ 'contact.title' | translate }}
+        </span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        {{ 'contact.subtitle' | translate }}
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <!-- Email Card -->
+        <div
+          class="p-6 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#f7003e] transition-all rounded-xl"
+        >
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-full bg-[#f7003e]/10 flex items-center justify-center flex-shrink-0"
+            >
+              <lucide-icon [img]="Mail" class="w-6 h-6 text-[#f7003e]"></lucide-icon>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">
+                {{ 'contact.email' | translate }}
+              </h3>
+              <a
+                [href]="'mailto:' + contact.email"
+                class="text-[#f7003e] hover:underline"
+              >
+                {{ contact.email }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div
+          class="p-6 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#f7003e] transition-all rounded-xl"
+        >
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-full bg-[#f7003e]/10 flex items-center justify-center flex-shrink-0"
+            >
+              <lucide-icon [img]="Phone" class="w-6 h-6 text-[#f7003e]"></lucide-icon>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">
+                {{ 'contact.phone' | translate }}
+              </h3>
+              <a
+                [href]="'tel:' + contact.phone"
+                class="text-[#f7003e] hover:underline"
+              >
+                {{ contact.phone }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex gap-4">
+          @for (social of contact.social; track social.platform) {
+            <a
+              [href]="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-12 h-12 rounded-full bg-[#f7003e] hover:bg-[#f7003e]/85 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+            >
+              <lucide-icon
+                [img]="getIcon(social.icon)"
+                class="w-6 h-6 text-white dark:text-gray-950"
+              ></lucide-icon>
+            </a>
+          }
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div
+        class="p-6 md:p-8 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#f7003e] transition-all rounded-xl"
+      >
+        <form (ngSubmit)="handleSubmit()" class="space-y-4">
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              {{ 'contact.form.name' | translate }}
+            </label>
+            <input
+              type="text"
+              [(ngModel)]="formData.name"
+              name="name"
+              required
+              title="{{ 'contact.form.name' | translate }}"
+              [placeholder]="'contact.form.namePlaceholder' | translate"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-[#f7003e] focus:outline-none focus:ring-2 focus:ring-[#f7003e]/20 dark:focus:ring-[#ae20fa]/20 transition-colors"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              {{ 'contact.form.email' | translate }}
+            </label>
+            <input
+              type="email"
+              [(ngModel)]="formData.email"
+              name="email"
+              required
+              title="{{ 'contact.form.email' | translate }}"
+              [placeholder]="'contact.form.emailPlaceholder' | translate"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-[#f7003e] dark:focus:border-[#ae20fa] focus:outline-none focus:ring-2 focus:ring-[#f7003e]/20 dark:focus:ring-[#ae20fa]/20 transition-colors"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              {{ 'contact.form.message' | translate }}
+            </label>
+            <textarea
+              [(ngModel)]="formData.message"
+              name="message"
+              required
+              title="{{ 'contact.form.message' | translate }}"
+              [placeholder]="'contact.form.messagePlaceholder' | translate"
+              rows="5"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-[#f7003e] dark:focus:border-[#ae20fa] focus:outline-none focus:ring-2 focus:ring-[#f7003e]/20 dark:focus:ring-[#ae20fa]/20 transition-colors resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full flex items-center justify-center gap-2 bg-[#f7003e] hover:bg-[#f7003e]/90 dark:bg-[#f7003e] dark:hover:bg-[#f7003e]/90 text-white py-4 text-lg rounded-lg font-semibold transition-colors"
+          >
+            <lucide-icon [img]="Send" class="w-5 h-5"></lucide-icon>
+            {{ 'contact.form.submit' | translate }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  @if (toastVisible) {
+    <div
+      class="fixed bottom-6 right-6 z-50 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl p-4 max-w-sm animate-fade-in"
+    >
+      <h4 class="font-bold text-gray-900 dark:text-white">{{ toastTitleKey | translate }}</h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+        {{ toastDescriptionKey | translate }}
+      </p>
+    </div>
+  }
+</section>
