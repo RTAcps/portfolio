@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { MockData } from '../../../shared/models/projects';
 import { mockData } from '../data/mock';
 
@@ -9,10 +9,10 @@ import { mockData } from '../data/mock';
   providedIn: 'root',
 })
 export class DataService {
-  private dataSubject = new BehaviorSubject<MockData | null>(null);
+  private readonly dataSubject = new BehaviorSubject<MockData | null>(null);
   public data$ = this.dataSubject.asObservable();
 
-  constructor(private translate: TranslateService) {
+  constructor(private readonly translate: TranslateService) {
     this.translate.onLangChange.subscribe(() => {
       this.loadData();
     });
