@@ -160,13 +160,15 @@
       "emailPlaceholder": "your.email@example.com",
       "message": "Message",
       "messagePlaceholder": "Your message...",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending..."
     },
     "toast": {
       "successTitle": "Message sent!",
       "successDescription": "I'll get back to you soon.",
       "errorTitle": "Error",
-      "errorDescription": "Please fill all fields."
+      "errorDescription": "Please fill all fields.",
+      "errorSending": "Error sending message. Please try again."
     }
   },
   "footer": {

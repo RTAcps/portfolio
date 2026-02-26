@@ -32,6 +32,7 @@ export class ContactSectionComponent implements OnInit {
   toastVisible = false;
   toastTitleKey = '';
   toastDescriptionKey = '';
+  isSubmitting = false;
 
   constructor(private readonly dataService: DataService) {}
 
@@ -53,8 +54,9 @@ export class ContactSectionComponent implements OnInit {
     return this.iconMap[iconName] || Link;
   }
 
-  handleSubmit(): void {
+  async handleSubmit(): Promise<void> {
     const { name, email, message } = this.formData;
+
     if (!name || !email || !message) {
       this.toastTitleKey = 'contact.toast.errorTitle';
       this.toastDescriptionKey = 'contact.toast.errorDescription';
@@ -65,15 +67,40 @@ export class ContactSectionComponent implements OnInit {
       return;
     }
 
-    this.toastTitleKey = 'contact.toast.successTitle';
-    this.toastDescriptionKey = 'contact.toast.successDescription';
-    this.toastVisible = true;
+    this.isSubmitting = true;
 
-    this.formData = { name: '', email: '', message: '' };
+    try {
+      const response = await fetch('/.netlify/functions/send-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
 
-    setTimeout(() => {
-      this.toastVisible = false;
-    }, 4000);
+      if (!response.ok) {
+        throw new Error('Failed to send contact message');
+      }
+
+      this.toastTitleKey = 'contact.toast.successTitle';
+      this.toastDescriptionKey = 'contact.toast.successDescription';
+      this.toastVisible = true;
+      this.formData = { name: '', email: '', message: '' };
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      this.toastTitleKey = 'contact.toast.errorTitle';
+      this.toastDescriptionKey = 'contact.toast.errorSending';
+      this.toastVisible = true;
+    } finally {
+      this.isSubmitting = false;
+      setTimeout(() => {
+        this.toastVisible = false;
+      }, 4000);
+    }
   }
 }
 

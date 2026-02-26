@@ -160,13 +160,15 @@
       "emailPlaceholder": "tu.email@ejemplo.com",
       "message": "Mensaje",
       "messagePlaceholder": "Tu mensaje...",
-      "submit": "Enviar Mensaje"
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
     },
     "toast": {
       "successTitle": "¡Mensaje enviado!",
       "successDescription": "Me pondré en contacto pronto.",
       "errorTitle": "Error",
-      "errorDescription": "Por favor, completa todos los campos."
+      "errorDescription": "Por favor, completa todos los campos.",
+      "errorSending": "Error al enviar el mensaje. Inténtalo de nuevo."
     }
   },
   "footer": {

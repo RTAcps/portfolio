@@ -2,7 +2,7 @@
   "data": {
     "hero": {
       "name": "Rodrigo Teixeira de Andrade",
-      "title": "Frontend Developer & Fullstack Specialist",
+      "title": "Desenvolvedor Front-end e Especialista Full Stack",
       "subtitle": "Especialista em Angular com 4+ anos de experiência",
       "description": "Desenvolvendo aplicações web escaláveis e de alto desempenho. Expertise em Angular, TypeScript, arquitetura de microfrontends e práticas ágeis em ambientes multidisciplinares internacionais.",
       "location": "Campinas, São Paulo, Brasil"
@@ -160,13 +160,15 @@
       "emailPlaceholder": "seu.email@exemplo.com",
       "message": "Mensagem",
       "messagePlaceholder": "Sua mensagem...",
-      "submit": "Enviar Mensagem"
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando..."
     },
     "toast": {
       "successTitle": "Mensagem enviada!",
       "successDescription": "Entrarei em contato em breve.",
       "errorTitle": "Erro",
-      "errorDescription": "Por favor, preencha todos os campos."
+      "errorDescription": "Por favor, preencha todos os campos.",
+      "errorSending": "Erro ao enviar mensagem. Tente novamente."
     }
   },
   "footer": {
