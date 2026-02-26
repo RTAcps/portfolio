@@ -15,6 +15,8 @@ export class HeroSectionComponent implements OnInit {
   readonly ArrowDown = ArrowDown;
   readonly MapPin = MapPin;
   readonly Briefcase = Briefcase;
+  acronym = '';
+  photoUrl = '../../../../assets/images/profile.png';
 
   hero: HeroData = {
     name: '',
@@ -31,8 +33,10 @@ export class HeroSectionComponent implements OnInit {
     this.dataService.data$.subscribe((data) => {
       if (data) {
         this.hero = data.hero;
+        this.acronym = this.hero.name.split(' ').filter(word => /^[A-Z]/.test(word)).map(word => word.charAt(0)).join('');
       }
     });
+
   }
 
   @ViewChild('heroAvatar') heroAvatar!: ElementRef;

@@ -30,7 +30,11 @@
         <div
           class="w-full h-full rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-4xl font-bold text-[#f7003e]"
         >
-          {{ hero.name.charAt(0) }}
+          @if (photoUrl) {
+            <img [src]="photoUrl" alt="Avatar" class="w-full h-full rounded-full object-cover" />
+          } @else {
+            {{ acronym }}
+          }
         </div>
       </div>
 
