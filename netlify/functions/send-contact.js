@@ -48,11 +48,27 @@ exports.handler = async (event) => {
   const publicKey = process.env.EMAILJS_PUBLIC_KEY;
   const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL;
 
+  console.log('Environment check:', {
+    hasServiceId: !!serviceId,
+    hasTemplateId: !!templateId,
+    hasPublicKey: !!publicKey,
+    hasReceiverEmail: !!receiverEmail,
+  });
+
   if (!serviceId || !templateId || !publicKey || !receiverEmail) {
+    console.error('Missing environment variables');
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: 'Email service not configured' }),
+      body: JSON.stringify({
+        error: 'Email service not configured',
+        debug: {
+          hasServiceId: !!serviceId,
+          hasTemplateId: !!templateId,
+          hasPublicKey: !!publicKey,
+          hasReceiverEmail: !!receiverEmail,
+        }
+      }),
     };
   }
 
@@ -78,11 +94,15 @@ exports.handler = async (event) => {
       body: JSON.stringify(emailPayload),
     });
 
+    console.log('EmailJS response status:', response.status);
+
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error('EmailJS error:', errorText);
       return {
         statusCode: response.status,
         headers,
-        body: JSON.stringify({ error: 'Failed to send email' }),
+        body: JSON.stringify({ error: 'Failed to send email', details: errorText }),
       };
     }
 
@@ -92,10 +112,11 @@ exports.handler = async (event) => {
       body: JSON.stringify({ ok: true }),
     };
   } catch (error) {
+    console.error('Unexpected error:', error);
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: 'Unexpected server error' }),
+      body: JSON.stringify({ error: 'Unexpected server error', message: error.message }),
     };
   }
 };
