@@ -7,6 +7,8 @@ import { ExperienceSectionComponent } from './components/experience-section/expe
 import { TechSectionComponent } from './components/tech-section/tech-section.component';
 import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
+import { EducationSectionComponent } from './components/education-section/education-section.component';
+import { CuriositiesSectionComponent } from './components/curiosities-section/curiosities-section.component';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +21,8 @@ import { ContactSectionComponent } from './components/contact-section/contact-se
     ExperienceSectionComponent,
     TechSectionComponent,
     ProjectsSectionComponent,
+    EducationSectionComponent,
+    CuriositiesSectionComponent,
     ContactSectionComponent,
   ],
   templateUrl: './home.component.html',

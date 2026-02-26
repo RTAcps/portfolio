@@ -34,6 +34,8 @@ export class HeaderComponent {
     { href: '#experiences', label: 'nav.experience' },
     { href: '#technologies', label: 'nav.tech' },
     { href: '#projects', label: 'nav.projects' },
+    { href: '#education', label: 'nav.education' },
+    { href: '#curiosities', label: 'nav.curiosities' },
     { href: '#contact', label: 'nav.contact' },
   ];
 
