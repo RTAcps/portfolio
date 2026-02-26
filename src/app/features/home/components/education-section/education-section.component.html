@@ -1,0 +1,63 @@
+<section id="education" class="py-20 relative">
+  <div class="container mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        <span
+          class="bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
+        >
+          {{ 'education.title' | translate }}
+        </span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        {{ 'education.subtitle' | translate }}
+      </p>
+    </div>
+
+    <!-- Education Grid -->
+    <div class="max-w-4xl mx-auto">
+      @for (edu of education; track edu.id) {
+        <div
+          class="p-6 md:p-8 hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#f7003e] group cursor-pointer rounded-xl mb-6"
+        >
+          <!-- Header with Icon -->
+          <div class="flex items-start gap-4 mb-4">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-[#f7003e] to-[#ae20fa] rounded-lg flex items-center justify-center flex-shrink-0"
+            >
+              <lucide-icon [img]="GraduationCap" class="w-6 h-6 text-white"></lucide-icon>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-[#f7003e] transition-colors">
+                {{ edu.degree }}
+              </h3>
+              <p class="text-lg text-[#f7003e] dark:text-[#ae20fa] font-semibold">
+                {{ edu.institution }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Field -->
+          <div class="ml-16">
+            <p class="text-gray-600 dark:text-gray-400 font-medium mb-2">
+              {{ edu.field }}
+            </p>
+
+            <!-- Year -->
+            <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 mb-4">
+              <lucide-icon [img]="Calendar" class="w-4 h-4"></lucide-icon>
+              <span class="text-sm font-medium">{{ edu.year }}</span>
+            </div>
+
+            <!-- Description -->
+            @if (edu.description) {
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                {{ edu.description }}
+              </p>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
