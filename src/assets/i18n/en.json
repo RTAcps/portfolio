@@ -44,20 +44,20 @@
     ],
     "projects": [
       {
-        "title": "E-Commerce Platform",
-        "description": "Complete e-commerce platform developed in Angular with optimized checkout and admin panel."
+        "title": "Taskflow - Microfrontends Platform",
+        "description": "Microfrontends orchestration platform using Module Federation. Complete system with shell, reactive components and analytics dashboard. Master's thesis in Software Engineering (grade 10)."
       },
       {
-        "title": "Dashboard Analytics",
-        "description": "Interactive dashboard with real-time data visualization, dynamic charts, and customizable reports."
+        "title": "MediRemind - Healthcare Full Stack",
+        "description": "Full Stack application for medication management and health reminders. PoC of Full Stack specialization at Descomplica with modern architecture and comprehensive testing (grade 10)."
       },
       {
-        "title": "Task Management App",
-        "description": "Task management application with drag-and-drop, real-time notifications, and team collaboration."
+        "title": "CalcOffer - Career Decision Tool",
+        "description": "Interactive tool for job offer feasibility analysis. Calculates and compares employment offers considering benefits, costs, and quality of life. Personal project under development."
       },
       {
-        "title": "Social Media Platform",
-        "description": "Social network with dynamic feed, post system, comments, and instant messaging."
+        "title": "TaskBlind - Unbiased Recruitment",
+        "description": "Project management and unbiased talent evaluation platform. PoC of MBA in Leadership and People Management at Descomplica. Backend in Java Spring Boot with PostgreSQL."
       }
     ],
     "education": [

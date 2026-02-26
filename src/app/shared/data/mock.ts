@@ -89,9 +89,10 @@ export const mockData: MockData = {
       description:
         'Plataforma de orquestração de Microfrontends usando Module Federation. Sistema completo com shell, componentes reativos e dashboard analítico. TCC do MBA em Engenharia de Software (nota 10).',
       technologies: ['Angular 19', 'TypeScript', 'Module Federation', 'RxJS', 'Tailwind CSS', 'Angular Material', 'Jest'],
-      image: 'https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=600&h=400&fit=crop',
-      link: 'https://taskflow-shell-project.com',
+      image: '../../../assets/images/taskflow.png',
+      link: 'https://taskflow-shell.netlify.app/',
       github: 'https://github.com/RTAcps/taskflow-shell',
+      status: 'published',
     },
     {
       id: 2,
@@ -99,9 +100,10 @@ export const mockData: MockData = {
       description:
         'Aplicação Full Stack para gerenciamento de medicamentos e lembretes de saúde. POC da especialização em Full Stack na Descomplica com arquitetura moderna e testes abrangentes (nota 10).',
       technologies: ['Angular 19', 'TypeScript', 'Angular SSR', 'Jest', 'RxJS', 'Angular Material', 'Authentication OIDC'],
-      image: 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=600&h=400&fit=crop',
+      image: '../../../assets/images/mediremind.png',
       link: 'https://mediremind-app.com',
       github: 'https://github.com/RTAcps/mediremind',
+      status: 'published',
     },
     {
       id: 3,
@@ -109,9 +111,10 @@ export const mockData: MockData = {
       description:
         'Ferramenta interativa para análise de viabilidade ao trocar de emprego. Calcula e compara ofertas CLT versus contrato atual, considerando benefícios e custos. Projeto pessoal em construção.',
       technologies: ['Angular 20', 'TypeScript', 'Tailwind CSS', 'RxJS', 'SweetAlert2', 'Responsive Design'],
-      image: 'https://images.unsplash.com/photo-1574258496837-41115a9ba748?w=600&h=400&fit=crop',
+      image: '../../../assets/images/calcoffer.png',
       link: '#',
       github: 'https://github.com/RTAcps/calcoffer',
+      status: 'in-development',
     },
     {
       id: 4,
@@ -119,9 +122,10 @@ export const mockData: MockData = {
       description:
         'Plataforma de gestão de projetos e avaliação de talentos sem viés. POC do MBA em Liderança e Gestão de Pessoas na Descomplica. Backend em Java Spring Boot com PostgreSQL.',
       technologies: ['Angular 21', 'TypeScript', 'Tailwind CSS', 'Java 21', 'Spring Boot 3.4', 'PostgreSQL', 'Lucide Angular'],
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+      image: '../../../assets/images/taskblind.png',
       link: '#',
       github: 'https://github.com/RTAcps/TaskBlind',
+      status: 'in-development',
     },
   ],
   education: [

@@ -44,20 +44,20 @@
     ],
     "projects": [
       {
-        "title": "Plateforme de Commerce Électronique",
-        "description": "Plateforme e-commerce complète développée en Angular avec paiement optimisé et panneau d'administration."
+        "title": "Taskflow - Plateforme Microfrontends",
+        "description": "Plateforme d'orchestration de Microfrontends utilisant Module Federation. Système complet avec shell, composants réactifs et tableau de bord analytique. Travail de fin d'études en Maîtrise d'Ingénierie Logicielle (note 10)."
       },
       {
-        "title": "Tableau de Bord Analytique",
-        "description": "Tableau de bord interactif avec visualisation de données en temps réel, graphiques dynamiques et rapports personnalisables."
+        "title": "MediRemind - Healthcare Full Stack",
+        "description": "Application Full Stack pour la gestion des médicaments et rappels de santé. PoC de la spécialisation Full Stack chez Descomplica avec architecture moderne et tests complets (note 10)."
       },
       {
-        "title": "Application de Gestion des Tâches",
-        "description": "Application de gestion des tâches avec glisser-déposer, notifications en temps réel et collaboration d'équipe."
+        "title": "CalcOffer - Outil de Décision Professionnelle",
+        "description": "Outil interactif pour l'analyse de viabilité du changement d'emploi. Calcule et compare les offres d'emploi en tenant compte des avantages, des coûts et de la qualité de vie. Projet personnel en développement."
       },
       {
-        "title": "Plateforme de Médias Sociaux",
-        "description": "Réseau social avec fil d'actualité dynamique, système de publications, commentaires et messagerie instantanée."
+        "title": "TaskBlind - Recrutement Impartial",
+        "description": "Plateforme de gestion de projets et d'évaluation des talents sans biais. PoC de la Maîtrise en Leadership et Gestion des Personnes chez Descomplica. Backend en Java Spring Boot avec PostgreSQL."
       }
     ],
     "education": [

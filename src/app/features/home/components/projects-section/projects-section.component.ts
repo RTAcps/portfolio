@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LucideAngularModule, ExternalLink } from 'lucide-angular';
+import { LucideAngularModule, ExternalLink, Lock } from 'lucide-angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { DataService } from '../../../../shared/services/data.service';
 import { Project } from '../../../../../shared/models/projects';
@@ -13,6 +13,7 @@ import { Project } from '../../../../../shared/models/projects';
 })
 export class ProjectsSectionComponent implements OnInit {
   readonly ExternalLink = ExternalLink;
+  readonly Lock = Lock;
 
   projects: Project[] = [];
   hoveredProject: number | null = null;
@@ -27,8 +28,14 @@ export class ProjectsSectionComponent implements OnInit {
     });
   }
 
-  openLink(url: string): void {
-    window.open(url, '_blank');
+  openLink(url: string, status: string): void {
+    if (status === 'published' && url !== '#') {
+      window.open(url, '_blank');
+    }
+  }
+
+  isProjectPublished(status: string): boolean {
+    return status === 'published';
   }
 }
 

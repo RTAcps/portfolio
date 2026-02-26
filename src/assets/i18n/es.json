@@ -44,20 +44,20 @@
     ],
     "projects": [
       {
-        "title": "Plataforma de Comercio Electrónico",
-        "description": "Plataforma completa de comercio electrónico desarrollada en Angular con checkout optimizado y panel administrativo."
+        "title": "Taskflow - Plataforma de Microfrontends",
+        "description": "Plataforma de orquestación de Microfrontends utilizando Module Federation. Sistema completo con shell, componentes reactivos y panel analítico. Trabajo de grado del MBA en Ingeniería de Software (nota 10)."
       },
       {
-        "title": "Dashboard Analytics",
-        "description": "Dashboard interactivo con visualización de datos en tiempo real, gráficos dinámicos e informes personalizables."
+        "title": "MediRemind - Healthcare Full Stack",
+        "description": "Aplicación Full Stack para la gestión de medicamentos y recordatorios de salud. POC de la especialización en Full Stack en Descomplica con arquitectura moderna y pruebas integrales (nota 10)."
       },
       {
-        "title": "Aplicación de Gestión de Tareas",
-        "description": "Aplicación de gestión de tareas con arrastrar y soltar, notificaciones en tiempo real y colaboración en equipo."
+        "title": "CalcOffer - Herramienta de Decisión Laboral",
+        "description": "Herramienta interactiva para análisis de viabilidad de cambio de empleo. Calcula y compara ofertas de empleo considerando beneficios, costos y calidad de vida. Proyecto personal en desarrollo."
       },
       {
-        "title": "Plataforma de Redes Sociales",
-        "description": "Red social con feed dinámico, sistema de publicaciones, comentarios y mensajería instantánea."
+        "title": "TaskBlind - Reclutamiento Imparcial",
+        "description": "Plataforma de gestión de proyectos y evaluación de talentos sin sesgos. POC del MBA en Liderazgo y Gestión de Personas en Descomplica. Backend en Java Spring Boot con PostgreSQL."
       }
     ],
     "education": [
