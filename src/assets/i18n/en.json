@@ -59,6 +59,58 @@
         "title": "Social Media Platform",
         "description": "Social network with dynamic feed, post system, comments, and instant messaging."
       }
+    ],
+    "education": [
+      {
+        "institution": "USP/ESALQ",
+        "degree": "MBA",
+        "field": "Software Engineering",
+        "year": "Expected Feb 2026",
+        "description": "Advanced degree in Software Engineering focusing on enterprise architecture and development practices"
+      },
+      {
+        "institution": "Descomplica College",
+        "degree": "MBA",
+        "field": "Leadership and People Management",
+        "year": "Expected Apr 2026",
+        "description": "MBA program focusing on leadership development, team management, and organizational behavior"
+      },
+      {
+        "institution": "Descomplica College",
+        "degree": "Postgraduate",
+        "field": "Full Stack Development",
+        "year": "Completed Apr 2025",
+        "description": "Comprehensive postgraduate program in full stack development covering frontend and backend technologies"
+      },
+      {
+        "institution": "Descomplica College",
+        "degree": "Bachelor of Science",
+        "field": "Systems Analysis and Development",
+        "year": "Completed Apr 2024",
+        "description": "Formal degree in systems analysis and development with focus on software engineering principles"
+      }
+    ],
+    "curiosities": [
+      {
+        "title": "Science Educator for 13+ Years",
+        "description": "Worked as a Biology and Science teacher from February 2011 to September 2024, teaching physics, chemistry, and biology to middle and high school students. This experience shaped my passion for education and communication."
+      },
+      {
+        "title": "Bachelor & Teaching Degree in Biology",
+        "description": "Hold both a Bachelor's degree and a Teaching License in Biology, providing deep expertise in natural sciences education and scientific methodology."
+      },
+      {
+        "title": "Master's Degree in Pedagogy",
+        "description": "Completed a Master's degree in Pedagogy, focusing on learning theories, educational processes, and instructional design."
+      },
+      {
+        "title": "Specialization in Science & Technology",
+        "description": "Completed a specialization in Science and Technology, bridging traditional education with modern technological innovations."
+      },
+      {
+        "title": "Career Transition to Tech",
+        "description": "Transitioned from traditional education to software development, bringing unique perspectives on problem-solving, mentoring, and collaborative learning to tech teams."
+      }
     ]
   },
   "nav": {
@@ -66,6 +118,8 @@
     "experience": "Experiences",
     "tech": "Technologies",
     "projects": "Projects",
+    "education": "Education",
+    "curiosities": "Fun Facts",
     "contact": "Contact"
   },
   "hero": {
@@ -75,6 +129,14 @@
   "experience": {
     "title": "Professional Experience",
     "subtitle": "My journey in front-end development"
+  },
+  "education": {
+    "title": "Academic Formation",
+    "subtitle": "My educational background"
+  },
+  "curiosities": {
+    "title": "Fun Facts",
+    "subtitle": "A bit more about me beyond tech"
   },
   "tech": {
     "title": "Technologies & Skills",
