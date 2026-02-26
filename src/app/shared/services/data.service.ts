@@ -53,6 +53,20 @@ export class DataService {
           link: mockData.projects[index]?.link || '#',
           github: mockData.projects[index]?.github || '#',
         })),
+        education: translatedData.education.map((edu: any, index: number) => ({
+          id: index + 1,
+          institution: edu.institution,
+          degree: edu.degree,
+          field: edu.field,
+          year: edu.year,
+          description: edu.description,
+        })),
+        curiosities: translatedData.curiosities.map((cur: any, index: number) => ({
+          id: index + 1,
+          title: cur.title,
+          description: cur.description,
+          icon: mockData.curiosities[index]?.icon || 'sparkles',
+        })),
         contact: mockData.contact,
       }))
     ).subscribe((data) => {

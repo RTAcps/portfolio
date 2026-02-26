@@ -50,11 +50,29 @@ export interface ContactData {
   social: SocialLink[];
 }
 
+export interface Education {
+  id: number;
+  institution: string;
+  degree: string;
+  field: string;
+  year: string;
+  description?: string;
+}
+
+export interface Curiosity {
+  id: number;
+  title: string;
+  description: string;
+  icon?: string;
+}
+
 export interface MockData {
   hero: HeroData;
   about: AboutData;
   experiences: Experience[];
   technologies: Technology[];
   projects: Project[];
+  education: Education[];
+  curiosities: Curiosity[];
   contact: ContactData;
 }
