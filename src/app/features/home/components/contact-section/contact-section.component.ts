@@ -63,7 +63,7 @@ export class ContactSectionComponent implements OnInit {
       this.toastVisible = true;
       setTimeout(() => {
         this.toastVisible = false;
-      }, 4000);
+      }, 8000);
       return;
     }
 
@@ -99,7 +99,7 @@ export class ContactSectionComponent implements OnInit {
       this.isSubmitting = false;
       setTimeout(() => {
         this.toastVisible = false;
-      }, 4000);
+      }, 8000);
     }
   }
 }
