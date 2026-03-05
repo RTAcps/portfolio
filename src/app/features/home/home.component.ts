@@ -19,7 +19,6 @@ import { CuriositiesSectionComponent } from './components/curiosities-section/cu
     FooterComponent,
     HeroSectionComponent,
     ExperienceSectionComponent,
-    TechSectionComponent,
     ProjectsSectionComponent,
     EducationSectionComponent,
     CuriositiesSectionComponent,

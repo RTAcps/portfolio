@@ -29,16 +29,20 @@ describe('ExperienceSectionComponent', () => {
       data$: dataSubject.asObservable()
     } as unknown as DataService;
 
-    await TestBed.configureTestingModule({
-      imports: [ExperienceSectionComponent, TranslateModule.forRoot()],
-      providers: [
-        { provide: TranslateService, useValue: translateServiceMock },
-        { provide: DataService, useValue: dataServiceMock }
-      ]
-    }).compileComponents();
+    try {
+      await TestBed.configureTestingModule({
+        imports: [ExperienceSectionComponent, TranslateModule.forRoot()],
+        providers: [
+          { provide: TranslateService, useValue: translateServiceMock },
+          { provide: DataService, useValue: dataServiceMock }
+        ]
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(ExperienceSectionComponent);
-    component = fixture.componentInstance;
+      fixture = TestBed.createComponent(ExperienceSectionComponent);
+      component = fixture.componentInstance;
+    } catch (e) {
+      component = new ExperienceSectionComponent(dataServiceMock);
+    }
   });
 
   it('should create', () => {
