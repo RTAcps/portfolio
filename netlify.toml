@@ -2,7 +2,7 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-  publish = "dist/portfolio"
+  publish = "dist/portfolio/browser"
   command = "pnpm build:prod"
 
 # Security Headers
@@ -14,7 +14,7 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    
+
 # Cache static assets
 [[headers]]
   for = "/*.js"
