@@ -11,7 +11,7 @@
       <a
         href="#about"
         (click)="scrollToSection($event, '#about')"
-        class="text-2xl font-bold bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent hover:scale-105 transition-transform"
+        class="text-2xl font-bold bg-gradient-to-r from-[#ad032d] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent hover:scale-105 transition-transform"
       >
         &lt;RTA /&gt;
       </a>
@@ -22,11 +22,11 @@
           <a
             [href]="link.href"
             (click)="scrollToSection($event, link.href)"
-            class="text-gray-700 dark:text-gray-300 hover:text-[#f7003e] dark:hover:text-[#f7003e] transition-colors font-medium relative group"
+            class="text-gray-700 dark:text-gray-300 hover:text-[#ad032d] dark:hover:text-[#ad032d] transition-colors font-medium relative group"
           >
             {{ link.label | translate }}
             <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f7003e] transition-all group-hover:w-full"
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ad032d] transition-all group-hover:w-full"
             ></span>
           </a>
         }
@@ -37,7 +37,7 @@
             (click)="toggleLanguageMenu()"
             class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
           >
-            <span class="text-md text-[#f7003e] font-black">{{ currentLanguage?.flag }}</span>
+            <span class="text-md text-[#ad032d] font-black">{{ currentLanguage?.flag }}</span>
             <lucide-icon [img]="ChevronDown" class="h-4 w-4 text-gray-700 dark:text-gray-300"></lucide-icon>
           </button>
 
@@ -48,7 +48,7 @@
                   (click)="changeLanguage(lang.code)"
                   class="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   [ngClass]="{
-                    'bg-[#f7003e]/10 dark:bg-[#f7003e]/50': currentLanguage?.code === lang.code
+                    'bg-[#ad032d]/10 dark:bg-[#ad032d]/50': currentLanguage?.code === lang.code
                   }"
                 >
                   <span class="text-sm">{{ lang.flag }}</span>
@@ -61,6 +61,7 @@
 
         <button
           (click)="toggleTheme()"
+          [attr.aria-label]="themeService.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
           class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
         >
           @if (themeService.theme() === 'dark') {
@@ -79,7 +80,7 @@
             (click)="toggleLanguageMenu()"
             class="flex items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
           >
-            <span class="text-md text-[#f7003e] font-black">{{ currentLanguage?.flag }}</span>
+            <span class="text-md text-[#ad032d] font-black">{{ currentLanguage?.flag }}</span>
           </button>
 
           @if (languageMenuOpen) {
@@ -89,7 +90,7 @@
                   (click)="changeLanguage(lang.code)"
                   class="w-full flex items-center gap-2 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   [ngClass]="{
-                    'bg-[#f7003e]/10 dark:bg-[#f7003e]/50': currentLanguage?.code === lang.code
+                    'bg-[#ad032d]/10 dark:bg-[#ad032d]/50': currentLanguage?.code === lang.code
                   }"
                 >
                   <span class="text-sm">{{ lang.flag }}</span>
@@ -102,6 +103,7 @@
 
         <button
           (click)="toggleTheme()"
+          [attr.aria-label]="themeService.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
           class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all"
         >
           @if (themeService.theme() === 'dark') {
@@ -112,6 +114,7 @@
         </button>
         <button
           (click)="mobileMenuOpen = !mobileMenuOpen"
+          [attr.aria-label]="mobileMenuOpen ? 'Close menu' : 'Open menu'"
           class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           @if (mobileMenuOpen) {
@@ -130,7 +133,7 @@
           <a
             [href]="link.href"
             (click)="scrollToSection($event, link.href)"
-            class="block text-gray-700 dark:text-gray-300 hover:text-[#f7003e] transition-colors font-medium py-2"
+            class="block text-gray-700 dark:text-gray-300 hover:text-[#ad032d] transition-colors font-medium py-2"
           >
             {{ link.label | translate }}
           </a>
