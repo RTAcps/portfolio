@@ -4,7 +4,7 @@
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">
         <span
-          class="bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
+          class="bg-gradient-to-r from-[#ad032d] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
         >
           {{ 'projects.title' | translate }}
         </span>
@@ -20,7 +20,7 @@
         <div
           class="overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 rounded-xl relative"
           [ngClass]="{
-            'border-[#f7003e] scale-105': hoveredProject === project.id && isProjectPublished(project.status),
+            'border-[#ad032d] scale-105': hoveredProject === project.id && isProjectPublished(project.status),
             'border-transparent': hoveredProject !== project.id || !isProjectPublished(project.status),
             'opacity-75': !isProjectPublished(project.status)
           }"
@@ -34,7 +34,7 @@
         >
           <!-- Project Image -->
           <div
-            class="relative h-48 overflow-hidden bg-gradient-to-br from-[#f7003e]/10 to-[#d914a4]/10 dark:from-gray-800 dark:to-gray-900"
+            class="relative h-48 overflow-hidden bg-gradient-to-br from-[#ad032d]/10 to-[#d914a4]/10 dark:from-gray-800 dark:to-gray-900"
           >
             <img
               [src]="project.image"
@@ -71,7 +71,7 @@
             <h3
               class="text-2xl font-bold text-gray-900 dark:text-white mb-3"
               [ngClass]="{
-                'group-hover:text-[#f7003e] transition-colors': isProjectPublished(project.status)
+                'group-hover:text-[#ad032d] transition-colors': isProjectPublished(project.status)
               }"
             >
               {{ project.title }}
@@ -85,7 +85,7 @@
             <div class="flex flex-wrap gap-2 mb-4">
               @for (tech of project.technologies; track tech) {
                 <span
-                  class="px-3 py-1 text-sm rounded-full bg-[#f7003e]/10 dark:bg-[#ae20fa]/10 text-[#f7003e] border border-[#f7003e]/20 dark:border-[#ae20fa]/30"
+                  class="px-3 py-1 text-sm rounded-full bg-[#ad032d]/10 dark:bg-[#ae20fa]/10 text-[#ad032d] border border-[#ad032d]/20 dark:border-[#ae20fa]/30"
                 >
                   {{ tech }}
                 </span>
@@ -98,7 +98,7 @@
                 class="flex-1 flex items-center justify-center gap-2 text-white py-2 px-4 rounded-lg font-medium transition-colors"
                 [ngClass]="
                   isProjectPublished(project.status)
-                    ? 'bg-[#f7003e] hover:bg-[#f7003e]/90 dark:bg-[#f7003e] dark:hover:bg-[#f7003e]/90 cursor-pointer'
+                    ? 'bg-[#ad032d] hover:bg-[#ad032d]/90 dark:bg-[#ad032d] dark:hover:bg-[#ad032d]/90 cursor-pointer'
                     : 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed opacity-60'
                 "
                 [disabled]="!isProjectPublished(project.status)"
@@ -111,7 +111,7 @@
                 class="flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg font-medium transition-colors"
                 [ngClass]="
                   isProjectPublished(project.status)
-                    ? 'border border-[#f7003e] dark:border-[#f7003e] text-[#f7003e] dark:text-[#f7003e] hover:bg-[#f7003e]/10 dark:hover:bg-[#f7003e]/10 cursor-pointer'
+                    ? 'border border-[#ad032d] dark:border-[#ad032d] text-[#ad032d] dark:text-[#ad032d] hover:bg-[#ad032d]/10 dark:hover:bg-[#ad032d]/10 cursor-pointer'
                     : 'border border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-60'
                 "
                 [disabled]="!isProjectPublished(project.status)"

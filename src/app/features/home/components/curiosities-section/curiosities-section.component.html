@@ -4,7 +4,7 @@
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">
         <span
-          class="bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
+          class="bg-gradient-to-r from-[#ad032d] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
         >
           {{ 'curiosities.title' | translate }}
         </span>
@@ -18,17 +18,17 @@
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
       @for (curiosity of curiosities; track curiosity.id) {
         <div
-          class="p-6 md:p-8 hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#f7003e] group cursor-pointer rounded-xl"
+          class="p-6 md:p-8 hover:shadow-xl transition-all duration-300 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-2 border-transparent hover:border-[#ad032d] group cursor-pointer rounded-xl"
         >
           <!-- Icon -->
           <div
-            class="w-16 h-16 bg-gradient-to-br from-[#f7003e] to-[#ae20fa] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            class="w-16 h-16 bg-gradient-to-br from-[#ad032d] to-[#ae20fa] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
           >
             <lucide-icon [img]="getIcon(curiosity.icon)" class="w-8 h-8 text-white"></lucide-icon>
           </div>
 
           <!-- Content -->
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-[#f7003e] transition-colors">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-[#ad032d] transition-colors">
             {{ curiosity.title }}
           </h3>
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed">

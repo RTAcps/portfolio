@@ -5,14 +5,14 @@
   <!-- Animated Background Elements -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div
-      class="absolute top-20 left-10 w-72 h-72 bg-[#f7003e]/10 dark:bg-[#d914a4]/10 rounded-full blur-3xl animate-pulse"
+      class="absolute top-20 left-10 w-72 h-72 bg-[#ad032d]/10 dark:bg-[#d914a4]/10 rounded-full blur-3xl animate-pulse"
     ></div>
     <div
       class="absolute bottom-20 right-10 w-96 h-96 bg-[#d914a4]/10 dark:bg-[#ae20fa]/10 rounded-full blur-3xl animate-pulse"
       [style.animationDelay]="'1s'"
     ></div>
     <div
-      class="absolute top-1/2 left-1/2 w-64 h-64 bg-[#ae20fa]/5 dark:bg-[#f7003e]/5 rounded-full blur-3xl animate-pulse"
+      class="absolute top-1/2 left-1/2 w-64 h-64 bg-[#ae20fa]/5 dark:bg-[#ad032d]/5 rounded-full blur-3xl animate-pulse"
       [style.animationDelay]="'2s'"
     ></div>
   </div>
@@ -25,10 +25,11 @@
       <!-- Avatar with 3D effect -->
       <div
         #heroAvatar
-        class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-[#f7003e] via-[#d914a4] to-[#ae20fa] p-1 transition-transform duration-200 ease-out shadow-2xl"
+        class="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-[#ad032d] via-[#d914a4] to-[#ae20fa] p-1 transition-transform duration-200 ease-out shadow-2xl will-change-transform"
+        style="transform: translateZ(0);"
       >
         <div
-          class="w-full h-full rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-4xl font-bold text-[#f7003e]"
+          class="w-full h-full rounded-full bg-gray-100 dark:bg-gray-900 flex items-center justify-center text-4xl font-bold text-[#ad032d]"
         >
           @if (photoUrl) {
             <img [src]="photoUrl" alt="Avatar" class="w-full h-full rounded-full object-cover" />
@@ -53,7 +54,7 @@
         [style.animationDelay]="'0.2s'"
       >
         <h2
-          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#f7003e] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
+          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#ad032d] via-[#d914a4] to-[#ae20fa] bg-clip-text text-transparent"
         >
           {{ hero.title }}
         </h2>
@@ -81,10 +82,10 @@
         [style.animationDelay]="'0.8s'"
       >
         <div
-          class="flex items-center gap-2 px-4 py-2 rounded-full bg-[#f7003e]/10 dark:bg-[#ae20fa]/10 border border-[#f7003e]/20"
+          class="flex items-center gap-2 px-4 py-2 rounded-full bg-[#ad032d]/10 dark:bg-[#ae20fa]/10 border border-[#ad032d]/20"
         >
-          <lucide-icon [img]="MapPin" class="w-4 h-4 text-[#f7003e] dark:text-[#ae20fa]"></lucide-icon>
-          <span class="text-sm font-medium text-[#f7003e] dark:text-[#ae20fa]">
+          <lucide-icon [img]="MapPin" class="w-4 h-4 text-[#ad032d] dark:text-[#ae20fa]"></lucide-icon>
+          <span class="text-sm font-medium text-[#ad032d] dark:text-[#ae20fa]">
             {{ hero.location }}
           </span>
         </div>
@@ -101,7 +102,8 @@
       <!-- CTA Button -->
       <button
         (click)="scrollToContact()"
-        class="bg-[#f7003e] hover:bg-[#f7003e]/90 dark:bg-[#f7003e] dark:hover:bg-[#f7003e]/90 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 animate-fade-in font-semibold"
+        class="bg-[#ad032d] hover:bg-[#ad032d]/90 dark:bg-[#ad032d] dark:hover:bg-[#ad032d]/90 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all animate-fade-in font-semibold will-change-transform"
+        style="transform: translateZ(0);"
         [style.animationDelay]="'1s'"
       >
         {{ 'hero.cta' | translate }}
