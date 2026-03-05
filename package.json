@@ -43,6 +43,7 @@
     "@angular-devkit/build-angular": "^21.1.5",
     "@angular/cli": "^21.1.5",
     "@angular/compiler-cli": "^21.1.5",
+    "@netlify/angular-runtime": "^3.0.1",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "@vitest/coverage-v8": "^4.0.18",
