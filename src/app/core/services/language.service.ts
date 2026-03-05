@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SeoService } from './seo.service';
 
 export type Language = 'en' | 'pt' | 'es' | 'fr';
 
@@ -13,6 +15,10 @@ export interface LanguageOption {
   providedIn: 'root'
 })
 export class LanguageService {
+  private readonly translate = inject(TranslateService);
+  private readonly seoService = inject(SeoService);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly STORAGE_KEY = 'portfolio-language';
 
   public readonly languages: LanguageOption[] = [
@@ -22,14 +28,25 @@ export class LanguageService {
     { code: 'fr', name: 'Français', flag: 'FR' }
   ];
 
-  constructor(private readonly translate: TranslateService) {
+  constructor() {
     this.initLanguage();
+
+    if (this.isBrowser) {
+      this.translate.onLangChange.subscribe((event) => {
+        this.seoService.updateMetaTags();
+        this.seoService.updateLanguage(event.lang);
+      });
+    }
   }
 
   private initLanguage(): void {
     this.translate.addLangs(this.languages.map(lang => lang.code));
 
     this.translate.setDefaultLang('en');
+
+    if (!this.isBrowser) {
+      return;
+    }
 
     const savedLanguage = this.getSavedLanguage();
     const browserLang = this.translate.getBrowserLang() as Language;
@@ -41,7 +58,10 @@ export class LanguageService {
 
   public setLanguage(lang: Language): void {
     this.translate.use(lang);
-    localStorage.setItem(this.STORAGE_KEY, lang);
+
+    if (this.isBrowser) {
+      localStorage.setItem(this.STORAGE_KEY, lang);
+    }
   }
 
   public getCurrentLanguage(): Language {
@@ -49,6 +69,10 @@ export class LanguageService {
   }
 
   private getSavedLanguage(): Language | null {
+    if (!this.isBrowser) {
+      return null;
+    }
+
     const saved = localStorage.getItem(this.STORAGE_KEY);
     return saved as Language | null;
   }

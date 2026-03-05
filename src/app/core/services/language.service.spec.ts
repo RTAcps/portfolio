@@ -5,6 +5,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { LanguageService } from './language.service';
+import { SeoService } from './seo.service';
 
 describe('LanguageService', () => {
   let service: LanguageService;
@@ -21,11 +22,19 @@ describe('LanguageService', () => {
       onLangChange: of()
     } as unknown as TranslateService;
 
+    const seoServiceMock = {
+      updateMetaTags: vi.fn(),
+      updateLanguage: vi.fn(),
+      updateCanonicalUrl: vi.fn(),
+      addStructuredData: vi.fn()
+    } as unknown as SeoService;
+
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [
         LanguageService,
-        { provide: TranslateService, useValue: translateServiceMock }
+        { provide: TranslateService, useValue: translateServiceMock },
+        { provide: SeoService, useValue: seoServiceMock }
       ]
     });
     service = TestBed.inject(LanguageService);
@@ -75,11 +84,19 @@ describe('LanguageService', () => {
       onLangChange: of()
     } as unknown as TranslateService;
 
+    const seoServiceMock = {
+      updateMetaTags: vi.fn(),
+      updateLanguage: vi.fn(),
+      updateCanonicalUrl: vi.fn(),
+      addStructuredData: vi.fn()
+    } as unknown as SeoService;
+
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [
         LanguageService,
-        { provide: TranslateService, useValue: translateServiceMock }
+        { provide: TranslateService, useValue: translateServiceMock },
+        { provide: SeoService, useValue: seoServiceMock }
       ]
     });
 
@@ -103,11 +120,19 @@ describe('LanguageService', () => {
       onLangChange: of()
     } as unknown as TranslateService;
 
+    const seoServiceMock = {
+      updateMetaTags: vi.fn(),
+      updateLanguage: vi.fn(),
+      updateCanonicalUrl: vi.fn(),
+      addStructuredData: vi.fn()
+    } as unknown as SeoService;
+
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [
         LanguageService,
-        { provide: TranslateService, useValue: translateServiceMock }
+        { provide: TranslateService, useValue: translateServiceMock },
+        { provide: SeoService, useValue: seoServiceMock }
       ]
     });
 
@@ -130,11 +155,19 @@ describe('LanguageService', () => {
       onLangChange: of()
     } as unknown as TranslateService;
 
+    const seoServiceMock = {
+      updateMetaTags: vi.fn(),
+      updateLanguage: vi.fn(),
+      updateCanonicalUrl: vi.fn(),
+      addStructuredData: vi.fn()
+    } as unknown as SeoService;
+
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       providers: [
         LanguageService,
-        { provide: TranslateService, useValue: translateServiceMock }
+        { provide: TranslateService, useValue: translateServiceMock },
+        { provide: SeoService, useValue: seoServiceMock }
       ]
     });
 
@@ -161,7 +194,7 @@ describe('LanguageService', () => {
 
   it('should update current language when setLanguage is called', () => {
     const targetLang = service.languages[1];
-    
+
     // Just verify setLanguage method exists and can be called
     expect(() => {
       service.setLanguage(targetLang.code);
@@ -171,7 +204,7 @@ describe('LanguageService', () => {
   it('should persist language change to localStorage', () => {
     const newLang = service.languages[0].code;
     service.setLanguage(newLang);
-    
+
     const saved = localStorage.getItem('portfolio-language');
     expect(saved).toBe(newLang);
   });
@@ -179,7 +212,7 @@ describe('LanguageService', () => {
   it('should return correct language option by code', () => {
     const targetLang = service.languages[0];
     const found = service.getLanguageOption(targetLang.code);
-    
+
     expect(found).toBeDefined();
     if (found) {
       expect(found).toBe(targetLang);
