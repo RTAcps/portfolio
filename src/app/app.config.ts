@@ -1,23 +1,26 @@
-import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, isDevMode, provideZonelessChangeDetection } from '@angular/core';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { provideServiceWorker } from '@angular/service-worker';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideAnimationsAsync(),
     provideHttpClient(),
     provideTranslateService({
-      defaultLanguage: 'en'
+      fallbackLang: 'en'
     }),
     ...provideTranslateHttpLoader({
-      prefix: '/assets/i18n/',
+      prefix: 'assets/i18n/',
       suffix: '.json'
-    }),
+    }), provideClientHydration(withEventReplay()), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          }),
   ],
 };
