@@ -16,6 +16,16 @@ body
   font-family: 'Inter', sans-serif
   overflow-x: hidden
 
+// Performance optimization to prevent CLS
+*
+  &[class*="hover:scale"]
+    will-change: transform
+    transform: translateZ(0)
+
+  &[class*="animate-"]
+    will-change: opacity
+    transform: translateZ(0)
+
 .bg-grid-pattern
   background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px)
   background-size: 30px 30px

@@ -1,0 +1,14 @@
+# robots.txt para Portfolio - Rodrigo Teixeira de Andrade
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rodrigotandrade.netlify.app/sitemap.xml
+
+# Disallow admin or private routes if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

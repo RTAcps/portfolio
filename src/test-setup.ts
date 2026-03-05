@@ -1,4 +1,16 @@
 import { vi } from 'vitest';
+import { TestBed, getTestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+
+// Initialize Angular TestBed only if not already initialized
+try {
+  const testBed = getTestBed();
+  if (!testBed.platform) {
+    TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+  }
+} catch (e) {
+  TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+}
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

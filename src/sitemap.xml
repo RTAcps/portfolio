@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://rodrigotandrade.netlify.app/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Alternate languages -->
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://rodrigotandrade.netlify.app/?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodrigotandrade.netlify.app/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://rodrigotandrade.netlify.app/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rodrigotandrade.netlify.app/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rodrigotandrade.netlify.app/" />
+  </url>
+
+</urlset>
