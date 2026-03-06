@@ -72,4 +72,36 @@ describe('ProjectsSectionComponent', () => {
     expect(openSpy).toHaveBeenCalledWith('https://example.com', '_blank');
     openSpy.mockRestore();
   });
+
+  it('should return true when github repository is public', () => {
+    const project = {
+      id: 1,
+      title: 'Public Repo',
+      description: 'desc',
+      technologies: [],
+      image: 'img',
+      link: '#',
+      github: 'https://github.com/example/public-repo',
+      githubVisibility: 'public',
+      status: 'published'
+    } as any;
+
+    expect(component.isGithubPublic(project)).toBe(true);
+  });
+
+  it('should return false when github repository is private', () => {
+    const project = {
+      id: 2,
+      title: 'Private Repo',
+      description: 'desc',
+      technologies: [],
+      image: 'img',
+      link: '#',
+      github: 'https://github.com/example/private-repo',
+      githubVisibility: 'private',
+      status: 'published'
+    } as any;
+
+    expect(component.isGithubPublic(project)).toBe(false);
+  });
 });

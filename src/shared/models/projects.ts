@@ -36,6 +36,7 @@ export interface Project {
   image: string;
   link: string;
   github: string;
+  githubVisibility?: 'public' | 'private';
   status: 'published' | 'in-development';
 }
 

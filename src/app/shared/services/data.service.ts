@@ -52,6 +52,7 @@ export class DataService {
           image: mockData.projects[index]?.image || '',
           link: mockData.projects[index]?.link || '#',
           github: mockData.projects[index]?.github || '#',
+          githubVisibility: mockData.projects[index]?.githubVisibility || 'public',
           status: mockData.projects[index]?.status || 'published',
         })),
         education: translatedData.education.map((edu: any, index: number) => ({

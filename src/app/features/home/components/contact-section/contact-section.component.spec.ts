@@ -1,61 +1,28 @@
 /// <reference types="vitest" />
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { ContactSectionComponent } from './contact-section.component';
 import { DataService } from '../../../../shared/services/data.service';
 
 describe('ContactSectionComponent', () => {
   let component: ContactSectionComponent;
-  let fixture: ComponentFixture<ContactSectionComponent>;
   let dataSubject: BehaviorSubject<any>;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     // Mock fetch globally
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ success: true })
     }) as any;
 
-    const translateServiceMock = {
-      addLangs: vi.fn(),
-      setDefaultLang: vi.fn(),
-      getBrowserLang: vi.fn().mockReturnValue('en'),
-      use: vi.fn().mockReturnValue(of()),
-      instant: vi.fn((key: string) => key),
-      get: vi.fn((key: string) => of({
-        hero: { name: 'Test', title: 'Test', subtitle: 'Test', description: 'Test', location: 'Test' },
-        about: { bio: 'Test', highlights: [] },
-        experiences: [{ company: 'Test', position: 'Test', period: 'Test', description: 'Test' }],
-        projects: [{ title: 'Test', description: 'Test' }],
-        contact: { email: 'test@test.com', social: [] }
-      })),
-      currentLang: 'en',
-      onLangChange: of()
-    } as unknown as TranslateService;
-
     dataSubject = new BehaviorSubject<any>(null);
     const dataServiceMock = {
       data$: dataSubject.asObservable()
     } as unknown as DataService;
 
-    try {
-      TestBed.configureTestingModule({
-        imports: [ContactSectionComponent, TranslateModule.forRoot()],
-        providers: [
-          { provide: TranslateService, useValue: translateServiceMock },
-          { provide: DataService, useValue: dataServiceMock }
-        ]
-      });
-
-      fixture = TestBed.createComponent(ContactSectionComponent);
-      component = fixture.componentInstance;
-    } catch (e) {
-      // If template loading fails, create component manually without TestBed
-      component = new ContactSectionComponent(dataServiceMock);
-    }
+    // Class-only tests: no template rendering needed.
+    component = new ContactSectionComponent(dataServiceMock);
   });
 
   it('should create', () => {

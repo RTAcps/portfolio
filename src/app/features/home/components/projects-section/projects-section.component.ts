@@ -37,5 +37,9 @@ export class ProjectsSectionComponent implements OnInit {
   isProjectPublished(status: string): boolean {
     return status === 'published';
   }
+
+  isGithubPublic(project: Project): boolean {
+    return (project.githubVisibility ?? 'public') === 'public' && project.github !== '#';
+  }
 }
 
