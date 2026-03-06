@@ -44,16 +44,16 @@
     ],
     "projects": [
       {
-        "title": "Taskflow - Plateforme Microfrontends",
-        "description": "Plateforme d'orchestration de Microfrontends utilisant Module Federation. Système complet avec shell, composants réactifs et tableau de bord analytique. Travail de fin d'études en Maîtrise d'Ingénierie Logicielle (note 10)."
+        "title": "Taskflow - Plateforme en Microfrontends",
+        "description": "Plateforme d'orchestration en Microfrontends utilisant Module Federation. Système complet avec shell, composants réactifs et tableau de bord analytique. Travail de fin d'études en Maîtrise d'Ingénierie Logicielle (note 10)."
       },
       {
-        "title": "MediRemind - Healthcare Full Stack",
+        "title": "MediRemind - Full Stack dans le domaine de la santé",
         "description": "Application Full Stack pour la gestion des médicaments et rappels de santé. PoC de la spécialisation Full Stack chez Descomplica avec architecture moderne et tests complets (note 10)."
       },
       {
         "title": "CalcOffer - Outil de Décision Professionnelle",
-        "description": "Outil interactif pour l'analyse de viabilité du changement d'emploi. Calcule et compare les offres d'emploi en tenant compte des avantages, des coûts et de la qualité de vie. Projet personnel en développement."
+        "description": "Outil interactif pour l'analyse de viabilité du changement d'emploi. Calcule et compare les offres d'emploi en tenant compte des avantages, des coûts et de la qualité de vie. Uniquement en portugais, car il est spécifique au marché du travail brésilien."
       },
       {
         "title": "TaskBlind - Recrutement Impartial",

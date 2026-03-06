@@ -44,16 +44,16 @@
     ],
     "projects": [
       {
-        "title": "Taskflow - Plataforma de Microfrontends",
-        "description": "Plataforma de orquestación de Microfrontends utilizando Module Federation. Sistema completo con shell, componentes reactivos y panel analítico. Trabajo de grado del MBA en Ingeniería de Software (nota 10)."
+        "title": "Taskflow - Plataforma en Microfrontends",
+        "description": "Plataforma de orquestación en Microfrontends utilizando Module Federation. Sistema completo con shell, componentes reactivos y panel analítico. Trabajo de grado del MBA en Ingeniería de Software (nota 10)."
       },
       {
-        "title": "MediRemind - Healthcare Full Stack",
+        "title": "MediRemind - Full Stack en el área de la salud",
         "description": "Aplicación Full Stack para la gestión de medicamentos y recordatorios de salud. POC de la especialización en Full Stack en Descomplica con arquitectura moderna y pruebas integrales (nota 10)."
       },
       {
         "title": "CalcOffer - Herramienta de Decisión Laboral",
-        "description": "Herramienta interactiva para análisis de viabilidad de cambio de empleo. Calcula y compara ofertas de empleo considerando beneficios, costos y calidad de vida. Proyecto personal en desarrollo."
+        "description": "Herramienta interactiva para análisis de viabilidad de cambio de empleo. Calcula y compara ofertas de empleo considerando beneficios, costos y calidad de vida. Solo en portugués, porque es específico para el mercado laboral brasileño."
       },
       {
         "title": "TaskBlind - Reclutamiento Imparcial",

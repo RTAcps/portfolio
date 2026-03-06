@@ -44,19 +44,19 @@
     ],
     "projects": [
       {
-        "title": "Taskflow - Microfrontends Platform",
-        "description": "Plataforma de orquestração de Microfrontends usando Module Federation. Sistema completo com shell, componentes reativos e dashboard analítico. TCC do MBA em Engenharia de Software (nota 10)."
+        "title": "Taskflow - Plataforma em microfrontends",
+        "description": "Plataforma de orquestração em Microfrontends usando Module Federation. Sistema completo com shell, componentes reativos e dashboard analítico. TCC do MBA em Engenharia de Software (nota 10)."
       },
       {
-        "title": "MediRemind - Healthcare Full Stack",
+        "title": "MediRemind - Full Stack na área da saúde",
         "description": "Aplicação Full Stack para gerenciamento de medicamentos e lembretes de saúde. POC da especialização em Full Stack na Descomplica com arquitetura moderna e testes abrangentes (nota 10)."
       },
       {
-        "title": "CalcOffer - Career Decision Tool",
-        "description": "Ferramenta interativa para análise de viabilidade ao trocar de emprego. Calcula e compara ofertas CLT versus contrato atual, considerando benefícios e custos. Projeto pessoal em construção."
+        "title": "CalcOffer - Ferramenta de decisão de carreira CLT",
+        "description": "Ferramenta interativa para análise de viabilidade ao trocar de emprego. Calcula e compara ofertas CLT versus contrato atual, considerando benefícios e custos."
       },
       {
-        "title": "TaskBlind - Unbiased Recruitment",
+        "title": "TaskBlind - Recrutamento imparcial",
         "description": "Plataforma de gestão de projetos e avaliação de talentos sem viés. POC do MBA em Liderança e Gestão de Pessoas na Descomplica. Backend em Java Spring Boot com PostgreSQL."
       }
     ],
