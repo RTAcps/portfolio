@@ -4,6 +4,7 @@
 [build]
   publish = "dist/portfolio/browser"
   command = "pnpm build:prod"
+  environment = { NODE_VERSION = "22.16.0" }
 
 # Security Headers
 [[headers]]
