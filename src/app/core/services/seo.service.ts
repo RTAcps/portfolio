@@ -18,9 +18,9 @@ export class SeoService {
    * Update all meta tags based on current language
    */
   updateMetaTags(): void {
-    const name = this.translate.instant('hero.name');
-    const jobTitle = this.translate.instant('hero.title');
-    const description = this.translate.instant('hero.description');
+    const name = this.translate.instant('data.hero.name');
+    const jobTitle = this.translate.instant('data.hero.title');
+    const description = this.translate.instant('data.hero.description');
 
     const fullTitle = `${name} | ${jobTitle}`;
 
